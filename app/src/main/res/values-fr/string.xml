@@ -2,4 +2,5 @@
 <resources>
     <string name="welcomeMessage">Bienvenue sur le meilleur des Pokédex !!!</string>
     <string name="languageButton">Changer la langue</string>
+    <string name="toast">Vous avez choisit le pokémon n°</string>
 </resources>
