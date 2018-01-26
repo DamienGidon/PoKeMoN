@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcomeMessage">Bienvenue sur le meilleur des Pokédex !!!</string>
+    <string name="languageButton">Changer la langue</string>
+</resources>
