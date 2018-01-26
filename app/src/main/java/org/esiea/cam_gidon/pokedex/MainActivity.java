@@ -28,15 +28,14 @@ public class MainActivity extends AppCompatActivity {
                     RelativeLayout.LayoutParams.WRAP_CONTENT,
                     RelativeLayout.LayoutParams.WRAP_CONTENT
             );
-            params.setMargins(300, 300 * (i-1), 10, 10);
+            params.topMargin = 300*(i-1);
+            params.addRule(RelativeLayout.CENTER_HORIZONTAL);
             button.setLayoutParams(params);
-            button.setGravity(Gravity.CENTER);
             button.setTag(i);
-            final int t = i;
             button.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Intent myIntent = new Intent(MainActivity.this, DetailsActivity.class);
-                    myIntent.putExtra("key", t); //Optional parameters
+                    myIntent.putExtra("key", v.getTag().toString()); //Optional parameters
                     MainActivity.this.startActivity(myIntent);
                 }
             });

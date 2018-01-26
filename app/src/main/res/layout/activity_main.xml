@@ -25,13 +25,6 @@
                 android:background="#E0232D"
                 android:id="@+id/mainLayout">
 
-                <!--<Button
-                    android:layout_width="400px"
-                    android:layout_height="200px"
-                    android:layout_centerHorizontal="true"
-                    android:text="Bulbizarre"
-                    android:onClick="DetailsPage"/> -->
-
             </RelativeLayout>
         </ScrollView>
 
