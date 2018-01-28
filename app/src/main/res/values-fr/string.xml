@@ -3,4 +3,6 @@
     <string name="welcomeMessage">Bienvenue sur le meilleur des Pokédex !!!</string>
     <string name="languageButton">Changer la langue</string>
     <string name="toast">Vous avez choisit le pokémon n°</string>
+    <string name="dialog">Voulez vous vraiment afficher le pokemon </string>
+    <string name="canceled">Operation annulée</string>
 </resources>
