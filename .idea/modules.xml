@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PoKeMoN.iml" filepath="$PROJECT_DIR$/PoKeMoN.iml" />
+      <module fileurl="file://C:\Users\Damien\Desktop\PoKeMoN_Cam_Gidon\PoKeMoN.iml" filepath="C:\Users\Damien\Desktop\PoKeMoN_Cam_Gidon\PoKeMoN.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PoKeMoN_Cam_Gidon.iml" filepath="$PROJECT_DIR$/PoKeMoN_Cam_Gidon.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Damien\Desktop\PoKeMoN_Cam_Gidon\app\app.iml" filepath="C:\Users\Damien\Desktop\PoKeMoN_Cam_Gidon\app\app.iml" />
     </modules>
   </component>
 </project>
