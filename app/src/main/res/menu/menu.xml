@@ -4,4 +4,8 @@
     <item
         android:id="@+id/actualize"
         android:title="Actualiser Pokédex" />
+
+    <item
+        android:id="@+id/notif"
+        android:title="Afficher Notification" />
 </menu>
