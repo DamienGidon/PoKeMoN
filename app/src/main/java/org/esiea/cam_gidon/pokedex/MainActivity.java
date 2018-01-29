@@ -40,6 +40,8 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     JSONArray pokemonList;
 
@@ -82,7 +84,15 @@ public class MainActivity extends AppCompatActivity {
             case R.id.notif:
                 createNotification();
                 return true;
+            case R.id.phone:
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:0665075487"));
+                startActivity(intent);
+                return true;
             case R.id.actualize:
+                Intent myIntent = new Intent(MainActivity.this, ListViewPokemons.class);
+                myIntent.putExtra("key", pokemonList.toString());
+                MainActivity.this.startActivity(myIntent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -103,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void CreateButton(JSONArray pokemonList){
+        Toast.makeText(getApplicationContext(),getString(R.string.download), Toast.LENGTH_LONG).show();
         RelativeLayout ll = (RelativeLayout) findViewById(R.id.mainLayout);
         for(int i = 0; i <= 150; i++){
             JSONObject jsonobject = pokemonList.optJSONObject(i);

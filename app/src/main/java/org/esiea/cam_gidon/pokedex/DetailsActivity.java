@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 public class DetailsActivity extends AppCompatActivity {
     String value;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

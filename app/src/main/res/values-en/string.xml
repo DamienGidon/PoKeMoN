@@ -5,4 +5,5 @@
     <string name="toast">You choose the Pokemon n°</string>
     <string name="dialog">Are you sure you want to see the pokemon </string>
     <string name="canceled">Operation canceled</string>
+    <string name="download">Downloaded</string>
 </resources>

@@ -5,4 +5,5 @@
     <string name="toast">Vous avez choisit le pokémon n°</string>
     <string name="dialog">Voulez vous vraiment afficher le pokemon </string>
     <string name="canceled">Operation annulée</string>
+    <string name="download">Téléchargement terminé</string>
 </resources>
