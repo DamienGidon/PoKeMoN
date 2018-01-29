@@ -6,10 +6,94 @@
     android:layout_height="match_parent"
     tools:context="org.esiea.cam_gidon.pokedex.DetailsActivity">
 
-    <TextView
-        android:id="@+id/data"
-        android:text="null"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="11dp"
+            android:id="@+id/image" />
+
+        <TextView
+            android:id="@+id/data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/image"
+            android:layout_marginBottom="29dp"
+            android:layout_marginStart="22dp"
+            android:layout_toEndOf="@+id/image"
+            android:text="Name"
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/chart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/data"
+            android:layout_marginTop="35dp"
+            android:layout_toStartOf="@+id/data"
+            android:text="Type :"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/chart"
+            android:layout_alignStart="@+id/weight"
+            android:text="TextView"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/chart"
+            android:layout_centerVertical="true"
+            android:text="Weight :"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView4"
+            android:layout_toEndOf="@+id/data"
+            android:text="TextView"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textView2"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="61dp"
+            android:text="Size :"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/Size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_alignStart="@+id/weight"
+            android:text="Size"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/data"
+            android:layout_alignTop="@+id/image"
+            android:text="TextView" />
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
