@@ -23,10 +23,14 @@ import static java.lang.System.in;
 
 public class DetailsActivity extends AppCompatActivity {
     String value;
+<<<<<<< HEAD
     JSONArray pokemonDetails;
     JSONObject detail;
     JSONArray array;
     String name;
+=======
+
+>>>>>>> master
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,17 +62,11 @@ public class DetailsActivity extends AppCompatActivity {
                     detail = response;
                     name = detail.optString("name");
                     TextView textView1;
+                    //in your OnCreate() method
                     textView1 = (TextView) findViewById( R.id.data );
+                    String test = "aaa" + detail.toString();
+                    //textView1.setText( detail.toString() );
                     textView1.setText( name );
-                    TextView textView2;
-                    textView2 = (TextView) findViewById( R.id.id );
-                    textView2.setText( "#"+value );
-                    TextView textView3;
-                    textView3 = (TextView) findViewById( R.id.weight );
-                    textView3.setText( detail.optString("weight") );
-                    TextView textView4;
-                    textView4 = (TextView) findViewById( R.id.Size);
-                    textView4.setText( detail.optString("height") );
                     if (pokemonDetails != null) {
                         Log.i("LOG", "test");
                     }

@@ -3,6 +3,7 @@
     package="org.esiea.cam_gidon.pokedex">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,12 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailsActivity"></activity>
-        <receiver android:name="Button_listener">
+        <activity android:name=".DetailsActivity" />
+
+        <receiver android:name=".Button_listener">
             <intent-filter>
-                <action android:name="button_clicked"/>
+                <action android:name="button_clicked" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".ListViewPokemons"></activity>
     </application>
 
 </manifest>
