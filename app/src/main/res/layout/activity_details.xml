@@ -35,7 +35,6 @@
             android:id="@+id/type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/chart"
             android:layout_marginStart="17dp"
             android:layout_toEndOf="@+id/id"
             android:textSize="20sp" />
