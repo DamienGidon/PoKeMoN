@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -13,6 +14,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -24,6 +26,7 @@ public class DetailsActivity extends AppCompatActivity {
     JSONArray pokemonDetails;
     JSONObject detail;
     JSONArray array;
+    String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,18 +53,20 @@ public class DetailsActivity extends AppCompatActivity {
                 if (response != null) {
                     int resultCount = response.optInt("resultCount");
 
-                   detail = response;
+                    //name = response.optString("name");
+
+                    detail = response;
+                    name = detail.optString("name");
                     TextView textView1;
                     //in your OnCreate() method
                     textView1 = (TextView) findViewById( R.id.data );
                     String test = "aaa" + detail.toString();
-                    textView1.setText( detail.toString() );
+                    //textView1.setText( detail.toString() );
+                    textView1.setText( name );
                     if (pokemonDetails != null) {
-                        Log.i( "LOG", "test" );
-
-                        //CreateButton( pokemonDetails );
-
+                        Log.i("LOG", "test");
                     }
+                        //CreateButton( pokemonDetails );
                 }
             }
         }, new Response.ErrorListener() {
