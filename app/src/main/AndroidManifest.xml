@@ -17,6 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".DetailsActivity"></activity>
+        <receiver android:name="Button_listener">
+            <intent-filter>
+                <action android:name="button_clicked"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

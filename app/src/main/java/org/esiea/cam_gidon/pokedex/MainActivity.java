@@ -3,8 +3,12 @@ package org.esiea.cam_gidon.pokedex;
 import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
+import android.support.v4.media.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,14 +17,35 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.RemoteViews;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Notification.Builder builder;
+    private NotificationManager notificationManager;
+    private  int id;
+    private RemoteViews remoteViews;
+    private Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Notification
+        context = this;
+        remoteViews = new RemoteViews(getPackageName(), R.layout.notif);
+        remoteViews.setImageViewResource(R.id.notif_icon, R.drawable.ic_launcher_background);
+        remoteViews.setTextViewText(R.id.notif_title, "POKEMON");
+        remoteViews.setProgressBar(R.id.progressBar,100,50,true);
 
+        id = (int) System.currentTimeMillis();
+        Intent button_intent = new Intent("button_clicked");
+        button_intent.putExtra("id", id);
+        PendingIntent p_button_intent = PendingIntent.getBroadcast(context,123, button_intent, 0);
+        remoteViews.setOnClickPendingIntent(R.id.button, p_button_intent);
+
+        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         this.CreateButton();
     }
 
@@ -45,7 +70,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private final void createNotification(){
+        Intent notification_intent = new Intent(context, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context,0,notification_intent,0);
 
+        builder = new Notification.Builder(context);
+        builder.setSmallIcon(R.drawable.ic_launcher_background)
+                .setAutoCancel(true)
+                .setCustomBigContentView(remoteViews)
+                .setContentIntent(pendingIntent);
+
+        notificationManager.notify(id,builder.build());
     }
 
     public void CreateButton(){
