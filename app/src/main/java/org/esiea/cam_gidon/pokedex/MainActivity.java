@@ -139,12 +139,12 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder;
         builder = new AlertDialog.Builder(this);
         builder.setTitle("Pokemon")
-            .setMessage(getString(R.string.dialog) + " " +tag.getTag().toString() + " ?")
+            .setMessage(getString(R.string.dialog) + " " +String.valueOf( Integer.parseInt( tag.getTag().toString() )+1) + " ?")
             .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                     Intent myIntent = new Intent(MainActivity.this, DetailsActivity.class);
                     myIntent.putExtra("key", tag.getTag().toString());
-                    Toast.makeText(getApplicationContext(),getString(R.string.toast) + tag.getTag().toString(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),getString(R.string.toast) + String.valueOf( Integer.parseInt( tag.getTag().toString() )+1), Toast.LENGTH_LONG).show();
                     MainActivity.this.startActivity(myIntent);
                 }
             })
@@ -178,7 +178,8 @@ public class MainActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e("LOG", error.toString());
+                //Log.e("LOG", error.toString());
+                Toast.makeText(getApplicationContext(),getString(R.string.fail), Toast.LENGTH_LONG).show();
             }
         });
         requestQueue.add(jsonObjectRequest);

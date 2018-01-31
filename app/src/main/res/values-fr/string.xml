@@ -6,4 +6,5 @@
     <string name="dialog">Voulez vous vraiment afficher le pokemon </string>
     <string name="canceled">Operation annulée</string>
     <string name="download">Téléchargement terminé</string>
+    <string name="fail">Aucune réponse, réessayez plus tard</string>
 </resources>

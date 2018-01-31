@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -78,6 +80,7 @@ public class DetailsActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e("LOG", error.toString());
+                Toast.makeText(getApplicationContext(),getString(R.string.fail), Toast.LENGTH_LONG).show();
             }
         });
         requestQueue.add(jsonObjectRequest);
